@@ -12,7 +12,12 @@ export const usePageStore = defineStore('page', () => {
 
     const getContentPage = async (pageName) => {
         const response = await API.page.getContent(pageName)
-        storePage(response)
+        // storePage(response[0])
+        if(response) {
+            storePage(response[0])
+           } else {
+            console.log("page not found!")
+           }
     }
 
     return {

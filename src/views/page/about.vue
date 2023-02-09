@@ -16,6 +16,7 @@ watchEffect(() => {
 
 <template>
   <h1>About Page</h1>
+  <pre>{{ pageContent }}</pre>
 </template> 
 
 <style scoped>
