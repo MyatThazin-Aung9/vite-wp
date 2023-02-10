@@ -19,7 +19,9 @@ npm create vite@latest
 ```
 npm create vite@latest
 ```
+```
 cd project name
+```
 ```
 npm install
 ```
