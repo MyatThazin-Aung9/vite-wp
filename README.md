@@ -21,12 +21,12 @@ npm create vite@latest
 ```
 cd project name
 ```
-```
 npm install
 ```
 ```
 npm run dev
 ```
+
 #### check terminal output local app_url(eg.Local: http://127.0.0.1:5173/)
 Terminate the process and create index.php,functions.php, header.php, footer.php and style.css file in project folder. Added require code to related file.
 
