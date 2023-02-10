@@ -16,7 +16,14 @@ watchEffect(() => {
 
 <template>
   <h1>About Page</h1>
-  <pre>{{ pageContent }}</pre>
+  <div>{{ pageContent }}</div>
+  <div v-if="pageContent !== ''">
+    <h3>{{ pageContent.title.rendered }}</h3>
+    <div v-html="pageContent.content.rendered"></div>
+  </div>
+  <div v-else>
+    <p>Page not found</p>
+  </div>
 </template> 
 
 <style scoped>

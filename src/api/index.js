@@ -7,5 +7,12 @@ export const API = {
             console.log(data);
             return data
         }
+    },
+    'posts': {
+        'getPosts': async (postType) => {
+            const { data } = await axios.get(`http://vuewordpress.local/wp-json/wp/v2/${postType}`)
+            console.log(data);
+            return data
+        }
     }
 }
