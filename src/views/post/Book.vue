@@ -1,29 +1,25 @@
 <script setup>
 import { ref, watchEffect } from 'vue';
-import { usePostStore } from "../../stores/post";
+import { usePostStore } from "../../stores/posts";
 
 const postStore = usePostStore()
-postStore.getContentPost('book')
+postStore.getPosts('news')
 
-const postContent = ref('')
+const posts = ref('')
 
 watchEffect(() => {
         if(postStore._posts !== null) {
-            postContent.value = postStore._posts
+            posts.value = postStore._posts
         }
 }, [postStore._posts])
 </script>
 
 <template>
   <h1>Posts</h1>
-  <div>{{ posts }}</div>
-  <!-- <div v-if="pageContent !== ''">
-    <h3>{{ pageContent.title.rendered }}</h3>
-    <div v-html="pageContent.content.rendered"></div>
+  <h2>{{ posts }}</h2>
+  <div v-for="post in posts">
+    <h2>{{ post.title.rendered }}</h2>
   </div>
-  <div v-else>
-    <p>Page not found</p>
-  </div> -->
 </template> 
 
 <style scoped>

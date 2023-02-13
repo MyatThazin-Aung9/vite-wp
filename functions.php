@@ -275,3 +275,14 @@ function register_experience_meta_fields(){
     ));
 
 }
+
+// register cpt
+function my_book_cpt() {
+  $args = array(
+     'public'       => true,
+'show_in_rest'       => true,
+     'label'        => 'Books'
+  );
+  register_post_type( 'book', $args );
+}
+add_action( 'init', 'my_book_cpt' );
