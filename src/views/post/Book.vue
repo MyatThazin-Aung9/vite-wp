@@ -3,7 +3,7 @@ import { ref, watchEffect } from 'vue';
 import { usePostStore } from "../../stores/posts";
 
 const postStore = usePostStore()
-postStore.getPosts('news')
+postStore.getPosts('book')
 
 const posts = ref('')
 
