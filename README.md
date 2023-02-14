@@ -34,10 +34,17 @@ run
 ```
 npm run build
 ```
-Auto create **dist** folder when run npm run build. Copy **js file name** from **asset** floder of dist and replace main.js of url in index.php. After that active the theme form appearence's theme of wp-admin.
+Auto create **dist** folder when run npm run build. Copy **js file name** from **asset** floder of dist and replace main.js of url in index.php. After that active the theme form appearence's theme of wp-admin. Check theme is activated or not with site url.
 
 #### install require package
 ```
 npm install vite-plugin-browser-sync
 ```
 Add require code into related vite.config.js file. comment/remove unnecessary code like call back for sass no need for now(necessary for later when installing/compiling sass).
+
+Add watch cmd into package.json like **"watch": "vite build --watch",**.
+run
+```
+npm run watch
+```
+when npm run watch, the dist/assets folder(.js and .css file) often disappears(it also dispeared when compile scss, so install firstly scss with cmt **npm install sass** and then run **npm run build**.so auto recreate dist/assets folder(auto changing main.js) when changing main.js reconnect/rename like **/dist/assets/main.js** in script tag of index.php. At this time, change url(./src etc..) of alias/build's input in vite.config.js.
