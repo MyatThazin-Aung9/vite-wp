@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import TopPage from '@/views/page/top.vue'
 import AboutPage from '@/views/page/about.vue'
+import BookPage from '@/views/post/Book.vue'
+import NewsPage from '@/views/post/News.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,6 +20,16 @@ const router = createRouter({
           name: 'about',
           component: AboutPage,
       },
+      {
+          path: '/books',
+          name: 'books',
+          component: BookPage,
+      },
+      {
+        path: '/news',
+        name: 'news',
+        component: NewsPage,
+    },
     ],
   });
   

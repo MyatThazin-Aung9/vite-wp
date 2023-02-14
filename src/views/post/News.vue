@@ -15,10 +15,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <h1>Posts</h1>
-  <h2>{{ posts }}</h2>
   <div v-for="post in posts">
     <h2>{{ post.title.rendered }}</h2>
+    <p v-html="post.content.rendered"></p>
   </div>
 </template> 
 

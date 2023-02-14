@@ -265,16 +265,16 @@ remove_action('admin_print_styles', 'print_emoji_styles');// 絵文字に関す�
 
 
 // add meta scripts
-add_action( 'rest_api_init', 'register_experience_meta_fields');
-function register_experience_meta_fields(){
+// add_action( 'rest_api_init', 'register_experience_meta_fields');
+// function register_experience_meta_fields(){
 
-    register_meta( 'page', 'username123', array(
-        'type' => 'string',
-        'single' => true,
-        'show_in_rest' => true
-    ));
+//     register_meta( 'page', 'username123', array(
+//         'type' => 'string',
+//         'single' => true,
+//         'show_in_rest' => true
+//     ));
 
-}
+// }
 
 // register cpt
 // function my_book_cpt() {
@@ -286,3 +286,23 @@ function register_experience_meta_fields(){
 //   register_post_type( 'book', $args );
 // }
 // add_action( 'init', 'my_book_cpt' );
+
+
+add_action( 'rest_api_init', 'create_api_posts_meta_field' );
+
+function create_api_posts_meta_field() {
+  register_rest_field( 'books', 'group', array(
+         'get_callback'    => 'get_post_meta_for_api',
+         'schema'          => null,
+      )
+  );
+}
+//Use the post ID to query the image and add it to your payload
+function get_post_meta_for_api( $object ) {
+  $post_id = $object['id'];
+  $post_meta = get_post_meta( $post_id );
+  $post_image = get_post_thumbnail_id( $post_id );      
+  $post_meta["group_image"] = wp_get_attachment_image_src($post_image,'original')[0];
+
+  return $post_meta;
+}
