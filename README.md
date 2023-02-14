@@ -48,3 +48,20 @@ run
 npm run watch
 ```
 when npm run watch, the dist/assets folder(.js and .css file) often disappears(it also dispeared when compile scss, so install firstly scss with cmt **npm install sass** and then run **npm run build**.so auto recreate dist/assets folder(auto changing main.js) when changing main.js reconnect/rename like **/dist/assets/main.js** in script tag of index.php. At this time, change url(./src etc..) of alias/build's input in vite.config.js.
+
+@ sign refer to main folder path.
+
+#### create require folders in src folder
+create folders and files
+- views
+    - page (eg. top.vue, about.vue etc..)
+    - post 
+    - layout (hader.vue etc..)
+    - archive
+- router
+    - index.js
+- stores
+    - page.js
+    - posts.js
+- api
+    - index.js
