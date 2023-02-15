@@ -6,19 +6,20 @@ export const usePostStore = defineStore('posts', () => {
 
     const _posts = ref(null)
 
-    const storePost = (postType) => {
-        _posts.value = postType
+    const storePosts = (posts) => {
+        _posts.value = posts
     }
 
     const getPosts = async (postType) => {
         const response = await API.posts.getPosts(postType)
         // storePage(response[0])
         if(response) {
-            storePost(response)
+            storePosts(response)
            } else {
             console.log("page not found!")
            }
     }
+
 
     return {
         _posts,

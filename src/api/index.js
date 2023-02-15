@@ -13,6 +13,12 @@ export const API = {
             const { data } = await axios.get(`http://vuewordpress.local/wp-json/wp/v2/${postType}`)
             console.log(data);
             return data
+        },
+        'getPost': async (postType, postId) => {
+            const { data } = await axios.get(`http://vuewordpress.local/wp-json/wp/v2/${postType}/${postId}`)
+            console.log(data);
+            return data
+            
         }
     }
 }

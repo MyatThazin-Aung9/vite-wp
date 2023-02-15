@@ -9,7 +9,7 @@
   <RouterView v-slot="{ Component }">
     <template v-if="Component">
       <Transition name="fade">
-        <KeepAlive>
+        <!-- <KeepAlive> -->
           <Suspense>
             <!-- main content -->
             <component :is="Component"></component>
@@ -19,7 +19,7 @@
               Loading...
             </template>
           </Suspense>
-        </KeepAlive>
+        <!-- </KeepAlive> -->
       </Transition>
     </template>
   </RouterView>

@@ -306,3 +306,24 @@ function get_post_meta_for_api( $object ) {
 
   return $post_meta;
 }
+
+// for custom field
+
+add_action('rest_api_init', 'create_custom_fields');
+function create_custom_fields() {
+  register_rest_field(
+    ['page','books'],
+    'custom_fields',
+    array(
+      'get_callback'    => 'get_custom_field',
+      'update_callback' => null,
+      'schema'          => null      
+    )
+  );
+}
+
+function get_custom_field( $object ) {
+  $post_id = $object['id'];
+  $post_meta = get_post_meta( $post_id );
+  return $post_meta;
+}

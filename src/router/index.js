@@ -6,6 +6,7 @@ import TopPage from '@/views/page/top.vue'
 import AboutPage from '@/views/page/about.vue'
 import BookPage from '@/views/post/Book.vue'
 import NewsPage from '@/views/post/News.vue'
+import BookSingle from '@/views/single/Book-single.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -26,10 +27,15 @@ const router = createRouter({
           component: BookPage,
       },
       {
-        path: '/news',
-        name: 'news',
-        component: NewsPage,
-    },
+          path: '/news',
+          name: 'news',
+          component: NewsPage,
+      },
+      {
+          path: '/books/:id',
+          name: 'book.single',
+          component: BookSingle,
+      },
     ],
   });
   

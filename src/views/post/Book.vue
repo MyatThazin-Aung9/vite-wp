@@ -20,8 +20,10 @@ watchEffect(() => {
     <p v-html="post.content.rendered"></p>
     <div>{{ new Date(post.date).toLocaleDateString("ja-JP")}}</div>
     <figure><img v-if="post._links['wp:featuredmedia']" :src="post.group.group_image" alt=""></figure>
-    <div><a :href="post.link">More</a></div>
-    <!-- <pre>{{ posts }}</pre> -->
+    <p>{{ post.custom_fields.name }}</p>
+    <p>{{post.custom_fields.description}}</p>
+    <div><a :href="'/books/'+post.id">More</a></div>
+    <pre>{{ posts }}</pre>
   </div>
 </template> 
 
