@@ -69,3 +69,8 @@ create folders and files
 #### Use css
 For using css, install sass and readd require code to call back sass in vite.config.js. use sass for related page/post in style tag or create scss folder in assets folder of src folder and create related scss file in scss folder. And connect scss file's path in main.js like **import './assets/scss/common.scss';**. 
 Save the working process file on github(without node-module file) auto install files in package.json when run npm install.
+
+### create page
+
+- create .vue file in related folder of src folder
+- 
