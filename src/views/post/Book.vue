@@ -23,7 +23,7 @@ watchEffect(() => {
     <p>{{ post.custom_fields.name }}</p>
     <p>{{post.custom_fields.description}}</p>
     <div><a :href="'/books/'+post.id">More</a></div>
-    <pre>{{ posts }}</pre>
+    <!-- <pre>{{ posts }}</pre> -->
   </div>
 </template> 
 

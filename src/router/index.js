@@ -7,6 +7,7 @@ import AboutPage from '@/views/page/about.vue'
 import BookPage from '@/views/post/Book.vue'
 import NewsPage from '@/views/post/News.vue'
 import BookSingle from '@/views/single/Book-single.vue'
+import Contact from '@/views/page/contact.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -36,6 +37,11 @@ const router = createRouter({
           name: 'book.single',
           component: BookSingle,
       },
+      {
+          path: '/contact',
+          name: 'contact',
+          component: Contact,
+    },
     ],
   });
   
