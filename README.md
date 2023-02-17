@@ -72,5 +72,6 @@ Save the working process file on github(without node-module file) auto install f
 
 ### create page
 
-- create .vue file in related folder of src folder
-- 
+- create .vue file in related folder of src folder. recall related js file from stores folder.
+- create .js file in stores folder of src folder. import related file path
+- create .js file in router folder. import related .vue file's path and declear route path of each page path.
